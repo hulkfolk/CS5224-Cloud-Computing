@@ -1,33 +1,45 @@
 from flask_api import FlaskAPI
 from flask import request, jsonify
 
-import json
+import decimal
+import flask.json
 
 from app.models import HouseNany
+
+
+class MyJSONEncoder(flask.json.JSONEncoder):
+
+    def default(self, obj):
+        if isinstance(obj, decimal.Decimal):
+            # Convert decimal instances to strings.
+            return float(obj)
+        return super(MyJSONEncoder, self).default(obj)
 
 
 def create_app():
     app = FlaskAPI(__name__, instance_relative_config=True)
     app.config.from_pyfile("config.py")
+    app.json_encoder = MyJSONEncoder
 
-    @app.route('/housenany/service/getschools', methods=['GET'])
+    # curl -X GET 'http://0.0.0.0:80/housenany/service/getschools/?name=tec&mrt=ang%20mo%20kio$chua%20chu&lang=chinese&offering=media$tgps'
+    @app.route('/housenany/service/getschools/', methods=['GET'])
     def get_schools():
-        results = HouseNany.get_schools()
+        args = request.args
+        results = HouseNany.get_schools(args)
         response = jsonify(results)
-        response.data = json.dumps(results).encode()
+        response.data = flask.json.dumps(results).encode()
         response.status_code = 200
         return response
 
     # /housenany/service/getproperties/?school=
-    # curl -X GET 'http://0.0.0.0:80/housenany/service/getproperties/?school=school1'
+    # curl -X GET 'http://0.0.0.0:80/housenany/service/getproperties/?postalCode=679676'
     @app.route("/housenany/service/getproperties/", methods=['GET'])
     def get_properties_by_shool(*args, **kwargs):
-        if "school" in request.args:
-            school = request.args["school"]
-            results = HouseNany.get_properties(school)
-            response = jsonify(results)
-            response.data = json.dumps(results).encode()
-            response.status_code = 200
-            return response
+        args = request.args
+        results = HouseNany.get_properties(args)
+        response = jsonify(results)
+        response.data = flask.json.dumps(results).encode()
+        response.status_code = 200
+        return response
 
     return app
