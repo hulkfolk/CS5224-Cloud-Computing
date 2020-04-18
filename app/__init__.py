@@ -41,5 +41,14 @@ def create_app():
         response.status_code = 200
         return response
 
+    # curl -X GET 'http://0.0.0.0:80/api/property?projectName=ESPA'
+    @app.route("/api/property", methods=['GET'])
+    def get_property():
+        args = request.args
+        results = HouseNany.get_property(args)
+        response = jsonify(results)
+        response.data = flask.json.dumps(results).encode()
+        response.status_code = 200
+        return response
 
     return app

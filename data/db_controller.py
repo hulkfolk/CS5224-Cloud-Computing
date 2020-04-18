@@ -106,10 +106,40 @@ def get_properties_by_school(args: dict):
     if connection.is_connected():
         school_postal = "'%%'" if not args.get('schoolPostal', None) else f"'%{args.get('schoolPostal')}%'"
         query = f"select * from school_project_distance where schoolPostal like {school_postal}"
+        print("query: ", query)
         cursor = connection.cursor()
         cursor.execute(query)
         column_names = [col[0] for col in cursor.description]
         data = [dict(zip(column_names, row)) for row in cursor.fetchall()]
+        print("query result: ", data)
+        connection.close()
+        return data
+    else:
+        return "DB is not connected"
+
+
+def get_property(args: dict):
+    connection = create_connection()
+    cursor = connection.cursor()
+
+    if connection.is_connected():
+        project_name = "''" if not args.get('projectName', None) else f"'{args.get('projectName')}'"
+        transaction_query = f"select marketSegment, area, floorRange, noOfUnits, contractDate, typeOfSale, price, propertyType, district, typeOfArea, tenure, unitPrice " \
+                            f"from private_project_transaction where project = {project_name}"
+        cursor.execute(transaction_query)
+        column_names = [col[0] for col in cursor.description]
+        recent_tnx = [dict(zip(column_names, row)) for row in cursor.fetchall()]
+        print("transaction_query: ", transaction_query)
+        print("query result: ", recent_tnx)
+
+        project_detail_query = f"select projectName, projectBlkPostal as postal, street, address, developerName " \
+                               f"from school_project_distance where projectName = {project_name} limit 1"
+        cursor.execute(project_detail_query)
+        column_names = [col[0] for col in cursor.description]
+        data = [dict(zip(column_names, row)) for row in cursor.fetchall()]
+        data = next(iter(data))
+        data["recentTnx"] = recent_tnx
+        print("transaction_query: ", project_detail_query)
         print("query result: ", data)
         connection.close()
         return data

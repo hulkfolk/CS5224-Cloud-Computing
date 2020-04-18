@@ -1,4 +1,4 @@
-from data.db_controller import get_schools, get_properties_by_school
+from data.db_controller import get_schools, get_properties_by_school, get_property
 
 
 class HouseNany:
@@ -12,3 +12,7 @@ class HouseNany:
     @staticmethod
     def get_properties(args):
         return get_properties_by_school(args)
+
+    @staticmethod
+    def get_property(args):
+        return get_property(args)
