@@ -21,8 +21,8 @@ def create_app():
     app.config.from_pyfile("config.py")
     app.json_encoder = MyJSONEncoder
 
-    # curl -X GET 'http://0.0.0.0:80/housenany/service/getschools/?name=tec&mrt=ang%20mo%20kio$chua%20chu&lang=chinese&offering=media$tgps'
-    @app.route('/housenany/service/getschools/', methods=['GET'])
+    # curl -X GET 'http://0.0.0.0:80/api/schools?name=tec&mrt=ang%20mo%20kio$chua%20chu&lang=chinese&offering=media$tgps'
+    @app.route('/api/schools', methods=['GET'])
     def get_schools():
         args = request.args
         results = HouseNany.get_schools(args)
@@ -31,9 +31,8 @@ def create_app():
         response.status_code = 200
         return response
 
-    # /housenany/service/getproperties/?school=
-    # curl -X GET 'http://0.0.0.0:80/housenany/service/getproperties/?postalCode=679676'
-    @app.route("/housenany/service/getproperties/", methods=['GET'])
+    # curl -X GET 'http://0.0.0.0:80/api/properties?schoolPostal=679676'
+    @app.route("/api/properties", methods=['GET'])
     def get_properties_by_shool(*args, **kwargs):
         args = request.args
         results = HouseNany.get_properties(args)
@@ -41,5 +40,6 @@ def create_app():
         response.data = flask.json.dumps(results).encode()
         response.status_code = 200
         return response
+
 
     return app

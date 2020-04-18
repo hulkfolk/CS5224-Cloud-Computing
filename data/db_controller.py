@@ -88,6 +88,7 @@ def get_schools(args: dict):
                     f"longitude, mrt_desc as mrtDesc, bus_desc as busDesc " \
                     f"from primaryschool " \
                     f"where school_name like {name} {mrt} {area} {lang} {offering}"
+        print("query: ", query)
         cursor = connection.cursor()
         cursor.execute(query)
         column_names = [col[0] for col in cursor.description]
@@ -103,7 +104,7 @@ def get_properties_by_school(args: dict):
     connection = create_connection()
 
     if connection.is_connected():
-        school_postal = "'%%'" if not args.get('postalCode', None) else f"'%{args.get('postalCode')}%'"
+        school_postal = "'%%'" if not args.get('schoolPostal', None) else f"'%{args.get('schoolPostal')}%'"
         query = f"select * from school_project_distance where schoolPostal like {school_postal}"
         cursor = connection.cursor()
         cursor.execute(query)
