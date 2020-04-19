@@ -132,6 +132,15 @@ def get_property(args: dict):
         print("transaction_query: ", transaction_query)
         print("query result: ", recent_tnx)
 
+        price_history_query = f"select contractDate as timestamp, round(avg(unitPrice), 2) as unitPrice " \
+                              f"from private_project_transaction where project = {project_name} " \
+                              f"group by contractDate order by contractDate"
+        cursor.execute(price_history_query)
+        column_names = [col[0] for col in cursor.description]
+        price_history = [dict(zip(column_names, row)) for row in cursor.fetchall()]
+        print("price_history_query: ", price_history_query)
+        print("query result: ", price_history)
+
         project_detail_query = f"select projectName, projectBlkPostal as postal, street, address, developerName " \
                                f"from school_project_distance where projectName = {project_name} limit 1"
         cursor.execute(project_detail_query)
@@ -139,7 +148,8 @@ def get_property(args: dict):
         data = [dict(zip(column_names, row)) for row in cursor.fetchall()]
         data = next(iter(data))
         data["recentTnx"] = recent_tnx
-        print("transaction_query: ", project_detail_query)
+        data["priceHistory"] = price_history
+        print("project_detail_query: ", project_detail_query)
         print("query result: ", data)
         connection.close()
         return data

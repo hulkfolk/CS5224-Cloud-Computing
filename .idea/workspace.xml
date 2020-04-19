@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="400dad46-1fb7-4834-b086-37de13a4d4ae" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/db_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/db_controller.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,12 +56,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="326" />
-          <entry key="py" value="5880" />
+          <entry key="py" value="5993" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="6206" />
+          <entry key="Python" value="6319" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -82,11 +80,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="53" column="14" lean-forward="true" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
+            <state relative-caret-position="406">
+              <caret line="49" column="58" lean-forward="true" selection-start-line="49" selection-start-column="58" selection-end-line="49" selection-end-column="58" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
                 <marker date="1587227548895" expanded="true" signature="411:416" ph="..." />
@@ -99,8 +97,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/p_virenv/lib/python3.6/site-packages/flask/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="1314" selection-start-line="1314" selection-end-line="1314" />
+            <state relative-caret-position="-4">
+              <caret line="1285" column="23" selection-start-line="1285" selection-start-column="23" selection-end-line="1285" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -119,16 +117,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/db_controller.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="145" column="9" lean-forward="true" selection-start-line="145" selection-start-column="9" selection-end-line="145" selection-end-column="9" />
+            <state relative-caret-position="406">
+              <caret line="156" column="32" selection-start-line="156" selection-start-column="32" selection-end-line="156" selection-end-column="32" />
               <folding>
-                <marker date="1587227779275" expanded="true" signature="268:271" ph="..." />
-                <marker date="1587227779275" expanded="true" signature="299:304" ph="..." />
-                <marker date="1587227779275" expanded="true" signature="4559:6664" ph="..." />
-                <marker date="1587227779275" expanded="true" signature="5236:6664" ph="..." />
+                <marker date="1587268688336" expanded="true" signature="268:271" ph="..." />
+                <marker date="1587268688336" expanded="true" signature="299:304" ph="..." />
+                <marker date="1587268688336" expanded="true" signature="4559:7295" ph="..." />
+                <marker date="1587268688336" expanded="true" signature="5236:7295" ph="..." />
               </folding>
             </state>
           </provider>
@@ -208,9 +206,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1528" />
-    <option name="y" value="275" />
-    <option name="width" value="1920" />
+    <option name="x" value="1495" />
+    <option name="y" value="262" />
+    <option name="width" value="1672" />
     <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -359,16 +357,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1528" y="275" width="1920" height="1057" extended-state="0" />
-    <editor active="true" />
+    <frame x="1473" y="127" width="1672" height="1057" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15113218" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17383404" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3299363" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.26943004" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4476684" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.5119171" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32953367" />
@@ -449,20 +446,20 @@
           <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/data/db_controller.py</url>
-          <line>139</line>
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/data/db_controller.py</url>
-          <line>136</line>
-          <option name="timeStamp" value="48" />
+          <url>file://$PROJECT_DIR$/app/__init__.py</url>
+          <line>51</line>
+          <option name="timeStamp" value="51" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>response.data</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>[dict(zip(column_names, row)) for row in cursor.fetchone()]</expression-string>
         <language-id>Python</language-id>
@@ -484,11 +481,6 @@
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>response.data</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
         <expression-string>args.get(&quot;name&quot;)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
@@ -505,11 +497,6 @@
       </expression>
       <expression>
         <expression-string>flask.json.dumps(results, use_decimal=True).encode()</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>json.dumps(results, use_decimal=True).encode()</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
@@ -587,25 +574,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/p_virenv/lib/python3.6/site-packages/flask/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="1314" selection-start-line="1314" selection-end-line="1314" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="53" column="14" lean-forward="true" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-            <marker date="1587227548895" expanded="true" signature="411:416" ph="..." />
-            <marker date="1587227548895" expanded="true" signature="1518:1753" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -628,15 +596,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/p_virenv/lib/python3.6/site-packages/flask/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4">
+          <caret line="1285" column="23" selection-start-line="1285" selection-start-column="23" selection-end-line="1285" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/data/db_controller.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="145" column="9" lean-forward="true" selection-start-line="145" selection-start-column="9" selection-end-line="145" selection-end-column="9" />
+        <state relative-caret-position="406">
+          <caret line="156" column="32" selection-start-line="156" selection-start-column="32" selection-end-line="156" selection-end-column="32" />
           <folding>
-            <marker date="1587227779275" expanded="true" signature="268:271" ph="..." />
-            <marker date="1587227779275" expanded="true" signature="299:304" ph="..." />
-            <marker date="1587227779275" expanded="true" signature="4559:6664" ph="..." />
-            <marker date="1587227779275" expanded="true" signature="5236:6664" ph="..." />
+            <marker date="1587268688336" expanded="true" signature="268:271" ph="..." />
+            <marker date="1587268688336" expanded="true" signature="299:304" ph="..." />
+            <marker date="1587268688336" expanded="true" signature="4559:7295" ph="..." />
+            <marker date="1587268688336" expanded="true" signature="5236:7295" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="49" column="58" lean-forward="true" selection-start-line="49" selection-start-column="58" selection-end-line="49" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+            <marker date="1587227548895" expanded="true" signature="411:416" ph="..." />
+            <marker date="1587227548895" expanded="true" signature="1518:1753" ph="..." />
           </folding>
         </state>
       </provider>
