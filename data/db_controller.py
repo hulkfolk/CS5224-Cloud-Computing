@@ -2,10 +2,10 @@ import mysql.connector
 
 
 def create_connection():
-    return mysql.connector.connect(host='localhost',
-                                   database='housenannyDB',
-                                   user='root',
-                                   password='cloud12345')
+    return mysql.connector.connect(host='housenanny.cuxxg96vzai9.us-east-1.rds.amazonaws.com',
+                                   database='HouseNanny',
+                                   user='HouseNanny',
+                                   password='HouseNanny')
 
 
 def get_schools(args: dict):
@@ -19,8 +19,7 @@ def get_schools(args: dict):
                     f"mothertongue1_code as mothertongue1Code, mothertongue2_code as mothertongue2Code, " \
                     f"mothertongue3_code as mothertongue3Code, special_sdp_offered as specialSdpOffered, latitude, " \
                     f"longitude, mrt_desc as mrtDesc, bus_desc as busDesc, ranking " \
-                    f"from primaryschool " \
-                    f"where ranking != 0"
+                    f"from primaryschool order by ranking DESC"
         else:
             name = "'%%'" if not args.get('name', None) else f"'%{args.get('name')}%'"
 
@@ -85,7 +84,7 @@ def get_schools(args: dict):
                     f"cluster_code as clusterCode, type_code as typeCode, nature_code as natureCode, " \
                     f"mothertongue1_code as mothertongue1Code, mothertongue2_code as mothertongue2Code, " \
                     f"mothertongue3_code as mothertongue3Code, special_sdp_offered as specialSdpOffered, latitude, " \
-                    f"longitude, mrt_desc as mrtDesc, bus_desc as busDesc " \
+                    f"longitude, mrt_desc as mrtDesc, bus_desc as busDesc, ranking " \
                     f"from primaryschool " \
                     f"where school_name like {name} {mrt} {area} {lang} {offering}"
         print("query: ", query)
@@ -93,7 +92,7 @@ def get_schools(args: dict):
         cursor.execute(query)
         column_names = [col[0] for col in cursor.description]
         data = [dict(zip(column_names, row)) for row in cursor.fetchall()]
-        print("query result: ", data)
+        # print("query result: ", data)
         connection.close()
         return data
     else:
@@ -111,7 +110,7 @@ def get_properties_by_school(args: dict):
         cursor.execute(query)
         column_names = [col[0] for col in cursor.description]
         data = [dict(zip(column_names, row)) for row in cursor.fetchall()]
-        print("query result: ", data)
+        # print("query result: ", data)
         connection.close()
         return data
     else:
@@ -130,7 +129,7 @@ def get_property(args: dict):
         column_names = [col[0] for col in cursor.description]
         recent_tnx = [dict(zip(column_names, row)) for row in cursor.fetchall()]
         print("transaction_query: ", transaction_query)
-        print("query result: ", recent_tnx)
+        # print("query result: ", recent_tnx)
 
         price_history_query = f"select contractDate as timestamp, round(avg(unitPrice), 2) as unitPrice " \
                               f"from private_project_transaction where project = {project_name} " \
@@ -139,7 +138,7 @@ def get_property(args: dict):
         column_names = [col[0] for col in cursor.description]
         price_history = [dict(zip(column_names, row)) for row in cursor.fetchall()]
         print("price_history_query: ", price_history_query)
-        print("query result: ", price_history)
+        # print("query result: ", price_history)
 
         project_detail_query = f"select projectName, projectBlkPostal as postal, street, address, developerName " \
                                f"from school_project_distance where projectName = {project_name} limit 1"
@@ -150,7 +149,7 @@ def get_property(args: dict):
         data["recentTnx"] = recent_tnx
         data["priceHistory"] = price_history
         print("project_detail_query: ", project_detail_query)
-        print("query result: ", data)
+        # print("query result: ", data)
         connection.close()
         return data
     else:
