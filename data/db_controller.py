@@ -1,4 +1,22 @@
+import os
+
 import mysql.connector
+
+
+def get_logger():
+    import logging
+
+    logger = logging.getLogger(__name__)
+    hdlr = logging.FileHandler(os.path.join(os.path.dirname(__file__), '..', 'housenanny.log'))
+    formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+    hdlr.setFormatter(formatter)
+    logger.addHandler(hdlr)
+    logger.setLevel(logging.INFO)
+
+    return logger
+
+
+logger = get_logger()
 
 
 def create_connection():
@@ -91,7 +109,8 @@ def get_schools(args: dict):
                     f"longitude, mrt_desc as mrtDesc, bus_desc as busDesc, ranking " \
                     f"from primaryschool " \
                     f"where school_name like {name} {mrt} {area} {lang} {offering}"
-        print("query: ", query)
+        # print("query: ", query)
+        logger.info(f"get school query: {query}")
         cursor = connection.cursor()
         cursor.execute(query)
         column_names = [col[0] for col in cursor.description]
@@ -110,6 +129,7 @@ def get_properties_by_school(args: dict):
         school_postal = "'%%'" if not args.get('schoolPostal', None) else f"'%{args.get('schoolPostal')}%'"
         query = f"select * from school_project_distance where schoolPostal like {school_postal}"
         print("query: ", query)
+        logger.info(f"get properties by shcool query: {query}")
         cursor = connection.cursor()
         cursor.execute(query)
         column_names = [col[0] for col in cursor.description]
@@ -132,13 +152,15 @@ def get_property(args: dict):
         cursor.execute(availability_query)
         column_names = [col[0] for col in cursor.description]
         availability = next(iter([dict(zip(column_names, row)) for row in cursor.fetchall()]))
+        logger.info(f"availability query: {availability_query}")
 
         transaction_query = f"select marketSegment, area, floorRange, noOfUnits, contractDate, typeOfSale, price, propertyType, district, typeOfArea, tenure, unitPrice " \
                             f"from private_project_transaction where project = {project_name}"
         cursor.execute(transaction_query)
         column_names = [col[0] for col in cursor.description]
         recent_tnx = [dict(zip(column_names, row)) for row in cursor.fetchall()]
-        print("transaction_query: ", transaction_query)
+        # print("transaction_query: ", transaction_query)
+        logger.info(f"transaction query: {transaction_query}")
         # print("query result: ", recent_tnx)
 
         price_history_query = f"select contractDate as timestamp, round(avg(unitPrice), 2) as unitPrice " \
@@ -147,7 +169,8 @@ def get_property(args: dict):
         cursor.execute(price_history_query)
         column_names = [col[0] for col in cursor.description]
         price_history = [dict(zip(column_names, row)) for row in cursor.fetchall()]
-        print("price_history_query: ", price_history_query)
+        # print("price_history_query: ", price_history_query)
+        logger.info(f"price history query: {price_history_query}")
         # print("query result: ", price_history)
 
         project_detail_query = f"select projectName, projectBlkPostal as postal, street, address, developerName " \
@@ -160,7 +183,8 @@ def get_property(args: dict):
         data["priceHistory"] = price_history
         data["soldToDate"] = availability["soldToDate"]
         data["unitsAvail"] = availability["unitsAvail"]
-        print("project_detail_query: ", project_detail_query)
+        # print("project_detail_query: ", project_detail_query)
+        logger.info(f"project details query: {project_detail_query}")
         # print("query result: ", data)
         connection.close()
         return data

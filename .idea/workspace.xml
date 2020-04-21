@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="400dad46-1fb7-4834-b086-37de13a4d4ae" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/db_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/db_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/distance.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/distance.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,13 +58,13 @@
         <counts>
           <entry key="Python Console" value="326" />
           <entry key="dummy" value="5" />
-          <entry key="py" value="6251" />
+          <entry key="py" value="6663" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="5" />
-          <entry key="Python" value="6577" />
+          <entry key="Python" value="6989" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -83,14 +83,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="47" selection-start-line="47" selection-end-line="47" />
+            <state relative-caret-position="468">
+              <caret line="50" column="44" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="67" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
-                <marker date="1587269967716" expanded="true" signature="1518:1753" ph="..." />
+                <marker date="1587469137582" expanded="true" signature="1766:2043" ph="..." />
               </folding>
             </state>
           </provider>
@@ -110,17 +110,18 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/db_controller.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="152" column="82" lean-forward="true" selection-start-line="152" selection-start-column="82" selection-end-line="152" selection-end-column="82" />
+            <state relative-caret-position="314">
+              <caret line="22" column="94" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="94" />
               <folding>
-                <marker date="1587466822531" expanded="true" signature="49:54" ph="..." />
-                <marker date="1587466822531" expanded="true" signature="541:544" ph="..." />
-                <marker date="1587466822531" expanded="true" signature="572:577" ph="..." />
-                <marker date="1587466822531" expanded="true" signature="4820:8059" ph="..." />
-                <marker date="1587466822531" expanded="true" signature="5499:8059" ph="..." />
+                <element signature="e#0#9#0" expanded="true" />
+                <marker date="1587468692365" expanded="true" signature="450:455" ph="..." />
+                <marker date="1587468692365" expanded="true" signature="942:945" ph="..." />
+                <marker date="1587468692365" expanded="true" signature="973:978" ph="..." />
+                <marker date="1587468692365" expanded="true" signature="5273:8859" ph="..." />
+                <marker date="1587468692365" expanded="true" signature="6016:8859" ph="..." />
               </folding>
             </state>
           </provider>
@@ -171,6 +172,7 @@
       <find>school_name</find>
       <find>postalCode</find>
       <find>schoolPostal</find>
+      <find>logging</find>
     </findStrings>
     <replaceStrings>
       <replace>schoolName</replace>
@@ -182,6 +184,7 @@
       <replace>distance</replace>
       <replace>blk</replace>
       <replace>schoolPostal</replace>
+      <replace>logger</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -193,15 +196,15 @@
         <option value="$PROJECT_DIR$/instance/config.py" />
         <option value="$PROJECT_DIR$/run.py" />
         <option value="$PROJECT_DIR$/app/models.py" />
-        <option value="$PROJECT_DIR$/app/__init__.py" />
         <option value="$PROJECT_DIR$/data/distance.py" />
         <option value="$PROJECT_DIR$/data/db_controller.py" />
+        <option value="$PROJECT_DIR$/app/__init__.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1384" />
-    <option name="y" value="127" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1441" />
+    <option name="y" value="139" />
     <option name="width" value="1920" />
     <option name="height" value="1057" />
   </component>
@@ -351,8 +354,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1443" y="23" width="1920" height="1057" extended-state="6" />
-    <editor active="true" />
+    <frame x="1441" y="139" width="1920" height="1057" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15113218" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -413,13 +415,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/data/db_controller.py</url>
-          <line>85</line>
+          <line>103</line>
           <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/data/db_controller.py</url>
-          <line>113</line>
-          <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/data/distance.py</url>
@@ -431,26 +428,36 @@
           <line>82</line>
           <option name="timeStamp" value="46" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/__init__.py</url>
-          <line>51</line>
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/__init__.py</url>
-          <line>37</line>
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/data/db_controller.py</url>
-          <line>160</line>
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>request.url</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>request</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>os.path.join(os.path.dirname(__file__), '..', 'housenanny.log')</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>os.path.dirname(os.path.dirname(__file__), '..', 'housenanny.log')</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>availability[&quot;soldToDate&quot;]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>response.data</expression-string>
         <language-id>Python</language-id>
@@ -473,26 +480,6 @@
       </expression>
       <expression>
         <expression-string>connection.</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>args.get(&quot;name&quot;)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>args.get(name)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>flask.json.dumps(results).encode()</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>flask.json.dumps(results, use_decimal=True).encode()</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
@@ -577,16 +564,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-          <folding>
-            <marker date="1586355094686" expanded="true" signature="27:28" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -599,27 +576,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/__init__.py">
+    <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
+        <state relative-caret-position="75">
+          <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
           <folding>
-            <element signature="e#0#30#0" expanded="true" />
-            <marker date="1587269967716" expanded="true" signature="1518:1753" ph="..." />
+            <marker date="1586355094686" expanded="true" signature="27:28" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/db_controller.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="152" column="82" lean-forward="true" selection-start-line="152" selection-start-column="82" selection-end-line="152" selection-end-column="82" />
+        <state relative-caret-position="314">
+          <caret line="22" column="94" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="94" />
           <folding>
-            <marker date="1587466822531" expanded="true" signature="49:54" ph="..." />
-            <marker date="1587466822531" expanded="true" signature="541:544" ph="..." />
-            <marker date="1587466822531" expanded="true" signature="572:577" ph="..." />
-            <marker date="1587466822531" expanded="true" signature="4820:8059" ph="..." />
-            <marker date="1587466822531" expanded="true" signature="5499:8059" ph="..." />
+            <element signature="e#0#9#0" expanded="true" />
+            <marker date="1587468692365" expanded="true" signature="450:455" ph="..." />
+            <marker date="1587468692365" expanded="true" signature="942:945" ph="..." />
+            <marker date="1587468692365" expanded="true" signature="973:978" ph="..." />
+            <marker date="1587468692365" expanded="true" signature="5273:8859" ph="..." />
+            <marker date="1587468692365" expanded="true" signature="6016:8859" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="50" column="44" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="67" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+            <marker date="1587469137582" expanded="true" signature="1766:2043" ph="..." />
           </folding>
         </state>
       </provider>
