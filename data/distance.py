@@ -122,8 +122,8 @@ def write_to_csv(d: dict, file_name: str):
 
 
 def clean_csv():
-    schools = pd.read_csv("SchoolProjectDistance.csv", sep='|')
-    schools.to_csv("SchoolProjectDistance_comma.csv", index=False)
+    schools = pd.read_csv("PrivateProjectSales.csv", sep='|')
+    schools.to_csv("PrivateProjectSales_comma.csv", index=False)
 
 
 if __name__ == "__main__":

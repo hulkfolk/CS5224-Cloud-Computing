@@ -2,10 +2,14 @@ import mysql.connector
 
 
 def create_connection():
-    return mysql.connector.connect(host='housenanny.cuxxg96vzai9.us-east-1.rds.amazonaws.com',
-                                   database='HouseNanny',
-                                   user='HouseNanny',
-                                   password='HouseNanny')
+    # return mysql.connector.connect(host='housenanny.cuxxg96vzai9.us-east-1.rds.amazonaws.com',
+    #                                database='HouseNanny',
+    #                                user='HouseNanny',
+    #                                password='HouseNanny')
+    return mysql.connector.connect(host='localhost',
+                                   database='housenannyDB',
+                                   user='root',
+                                   password='cloud12345')
 
 
 def get_schools(args: dict):
@@ -123,6 +127,12 @@ def get_property(args: dict):
 
     if connection.is_connected():
         project_name = "''" if not args.get('projectName', None) else f"'{args.get('projectName')}'"
+        availability_query = f"select sold_to_date as soldToDate, units_avail as unitsAvail " \
+                             f"from private_project_sales where project = {project_name} limit 1"
+        cursor.execute(availability_query)
+        column_names = [col[0] for col in cursor.description]
+        availability = next(iter([dict(zip(column_names, row)) for row in cursor.fetchall()]))
+
         transaction_query = f"select marketSegment, area, floorRange, noOfUnits, contractDate, typeOfSale, price, propertyType, district, typeOfArea, tenure, unitPrice " \
                             f"from private_project_transaction where project = {project_name}"
         cursor.execute(transaction_query)
@@ -148,6 +158,8 @@ def get_property(args: dict):
         data = next(iter(data))
         data["recentTnx"] = recent_tnx
         data["priceHistory"] = price_history
+        data["soldToDate"] = availability["soldToDate"]
+        data["unitsAvail"] = availability["unitsAvail"]
         print("project_detail_query: ", project_detail_query)
         # print("query result: ", data)
         connection.close()
