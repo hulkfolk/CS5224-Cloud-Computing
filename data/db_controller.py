@@ -151,7 +151,8 @@ def get_property(args: dict):
                              f"from private_project_sales where project = {project_name} limit 1"
         cursor.execute(availability_query)
         column_names = [col[0] for col in cursor.description]
-        availability = next(iter([dict(zip(column_names, row)) for row in cursor.fetchall()]))
+        availability = [dict(zip(column_names, row)) for row in cursor.fetchall()]
+        availability = next(iter(availability)) if availability else {}
         logger.info(f"availability query: {availability_query}")
 
         transaction_query = f"select marketSegment, area, floorRange, noOfUnits, contractDate, typeOfSale, price, propertyType, district, typeOfArea, tenure, unitPrice " \
@@ -178,11 +179,11 @@ def get_property(args: dict):
         cursor.execute(project_detail_query)
         column_names = [col[0] for col in cursor.description]
         data = [dict(zip(column_names, row)) for row in cursor.fetchall()]
-        data = next(iter(data))
+        data = next(iter(data)) if data else {}
         data["recentTnx"] = recent_tnx
         data["priceHistory"] = price_history
-        data["soldToDate"] = availability["soldToDate"]
-        data["unitsAvail"] = availability["unitsAvail"]
+        data["soldToDate"] = availability.get("soldToDate", "")
+        data["unitsAvail"] = availability.get("unitsAvail", "")
         # print("project_detail_query: ", project_detail_query)
         logger.info(f"project details query: {project_detail_query}")
         # print("query result: ", data)
