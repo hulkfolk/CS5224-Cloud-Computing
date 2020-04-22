@@ -20,10 +20,6 @@ logger = get_logger()
 
 
 def create_connection():
-    # return mysql.connector.connect(host='housenanny.cuxxg96vzai9.us-east-1.rds.amazonaws.com',
-    #                                database='HouseNanny',
-    #                                user='HouseNanny',
-    #                                password='HouseNanny')
     return mysql.connector.connect(host='localhost',
                                    database='housenannyDB',
                                    user='root',
